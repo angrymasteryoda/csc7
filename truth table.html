@@ -1,0 +1,280 @@
+<html>
+<head>
+	<style>
+		*{
+			font-size: 10pt;
+		}
+		p {
+			padding: 0;
+			margin: 0;
+			font-weight: bold;
+			width: 100%;
+			border-bottom: 2px dashed black;
+			padding-bottom: 5px;
+		}
+
+		table {
+			margin: 5px 0 5px 0;
+			padding: 0;
+			text-align: center;
+			vertical-align: middle;
+			border-collapse: collapse;
+		}
+		table tr td{
+			padding: 5px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+<script>
+	"????"
+	var p = [true, true, false, false];
+	var q = [true, false, true, false];
+	var r = [false, false, true, true];
+	var t = true;
+	var c = false;
+
+	header( "Commutative laws: p && q == q && p" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "p && q" ); cell( "q && p" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( p[i] && q[i] );
+		cell( p[i] && q[i] );
+		row();
+	}
+	end();
+
+	header( "Commutative laws: p || q == q || p" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "p || q" ); cell( "q || p" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( p[i] || q[i] );
+		cell( p[i] || q[i] );
+		row();
+	}
+	end();
+
+	header( "Associative laws: ( p && q ) && r == p && ( q && r )" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "r" ); cell( "p && q" ); cell( "( p && q ) && r " ); cell( "q && r" ); cell( "p && ( q && r )" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( r[i] );
+		cell( p[i] && q[i] );
+		cell( ( p[i] && q[i] ) && r[i] );
+		cell( q[i] && r[i] );
+		cell( p[i] && ( q[i] && r[i] ) );
+		row();
+	}
+	end();
+
+	header( "Associative laws: ( p || q ) || r == p || ( q || r )" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "r" ); cell( "p || q" ); cell( "( p || q ) || r " ); cell( "q || r" ); cell( "p || ( q || r )" );  row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( r[i] );
+		cell( p[i] || q[i] );
+		cell( ( p[i] || q[i] ) || r[i] );
+		cell( q[i] || r[i] );
+		cell( p[i] || ( q[i] || r[i] ) );
+		row();
+	}
+	end();
+
+	write( "<br><br><br>");
+	header( "Distributive laws: p && ( q || r ) == ( p && q ) || ( p && r )" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "r" ); cell( "q || r" ); cell( "p && ( q || r )" ); cell( "p && q" ); cell( "p && r" ); cell( "( p && q ) || ( p && r )" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( r[i] );
+		cell( q[i] || r[i] );
+		cell( p[i] && ( q[i] || r[i] ) );
+		cell( p[i] && q[i] );
+		cell( p[i] && r[i] );
+		cell( ( p[i] && q[i] ) || ( p[i] && r[i] ) );
+		row();
+	}
+	end();
+
+	header( "Distributive laws: p || ( q && r ) == ( p || q ) && ( p || r )" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "r" ); cell( "q && r" ); cell( "p || ( q && r )" ); cell( "p || q" ); cell( "p || r" ); cell( "( p || q ) && ( p || r )" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( r[i] );
+		cell( q[i] && r[i] );
+		cell( p[i] || ( q[i] && r[i] ) );
+		cell( p[i] || q[i] );
+		cell( p[i] || r[i] );
+		cell( ( p[i] || q[i] ) && ( p[i] || r[i] ) );
+		row();
+	}
+	end();
+
+	header( "Identity law: p && t == p OR p || c == p" );
+	start();
+	cell( "p" ); cell( "t" ); cell( "p && t " ); cell( "c" ); cell( "p || c" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( t );
+		cell( p[i] && t );
+		cell( c );
+		cell( p[i] || c );
+		row();
+	}
+	end();
+
+	header( "Negation law: p || ~p == t OR p && ~p == c" );
+	start();
+	cell( "p" ); cell( "~p[i]" ); cell( "t" ); cell( "p || ~p"); cell( "c" ); cell( "p && ~p");row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( !p[i] );
+		cell( t );
+		cell( p[i] || !p[i] );
+		cell( c );
+		cell( p[i] && !p[i] );
+		row();
+	}
+	end();
+	write( "<br><br><br>");
+	header( "Double negative law: ~( ~p ) == p" );
+	start();
+	cell( "p" ); cell( "~p" ); cell( "~( ~p )" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( !p[i] );
+		cell( !( !p[i] ) );
+		row();
+	}
+	end();
+
+	header( "Idempotent law: p && p == p OR p || p == p" );
+	start();
+	cell( "p" ); cell( "p && p" ); cell( "p || p" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( p[i] && p[i] ); 
+		cell( p[i] || p[i] );
+		row();
+	}
+	end();
+
+	header( "Universal bound law: p || t == t OR p && c == c" );
+	start();
+	cell( "p" ); cell( "t" ); cell( "p || t" ); cell( "c" ); cell( "p || c" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( t );
+		cell( p[i] || t );
+		cell( c );
+		cell( p[i] && c );
+		row();
+	}
+	end();
+	write( "<br><br><br>");
+	header( "De Morgan's law: ~( p && q ) == ~p || ~q" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "p && q" ); cell( "~( p && q )" ); cell( "~p" ); cell( "~q" ); cell( "~p || ~q" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( p[i] && q[i] );
+		cell( !( p[i] && q[i] ) );
+		cell( !p[i] );
+		cell( !q[i] );
+		cell( !p[i] || !q[i] );
+		row();
+	}
+	end();
+
+	header( "De Morgan's law: ~( p || q ) == ~p && ~q" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "p || q" ); cell( "~( p || q )" ); cell( "~p" ); cell( "~q" ); cell( "~p && ~q" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( p[i] || q[i] );
+		cell( !( p[i] || q[i] ) );
+		cell( !p[i] );
+		cell( !q[i] );
+		cell( !p[i] && !q[i] );
+		row();
+	}
+	end();
+
+	header( "Absorption law: p || ( p && q ) == p" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "p && q" ); cell( "p || ( p && q )" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( p[i] && q[i] );
+		cell( p[i] || ( p[i] && q[i] ) );
+		row();
+	}
+	end();
+
+	header( "Absorption law: p && ( p || q ) == p" );
+	start();
+	cell( "p" ); cell( "q" ); cell( "p || q" ); cell( "p && ( p || q )" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( p[i] );
+		cell( q[i] );
+		cell( p[i] || q[i] );
+		cell( p[i] && ( p[i] || q[i] ) );
+		row();
+	}
+	end();
+
+	header( "Negations of t and c: ~t == c OR ~c == t" );
+	start();
+	cell( "t" ); cell( "~t" ); cell( "c" ); cell( "~c" ); row();
+	for ( var i = 0; i < p.length; i++ ) {
+		cell( t );
+		cell( !t );
+		cell( c );
+		cell( !c );
+		row();
+	}
+	end();
+
+	function header( arg ) {
+		write( "<p>" + arg + "</p>" );
+	}
+	function cell( arg ) {
+		if ( typeof arg === "boolean" ) {
+			arg = arg ? 'T' : 'F';
+		}
+		write( "<td>" + arg + "</td>" );
+	}
+	function start() {
+		write( "<table>" );
+		write( "<tr>" );
+	}
+	function end() {
+		write( "</tr>" );
+		write( "</table>" );
+	}
+	function row() {
+		write( "</tr>" );
+		write( "<tr>" );
+	}
+
+	function write( arg ) {
+		document.write( arg );
+	}
+</script>
+</body>
+</html>

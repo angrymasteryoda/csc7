@@ -1,0 +1,41 @@
+Exercise set 1.1
+
+In each of 1–6, fill in the blanks using a variable or variables to
+rewrite the given statement.
+
+1: Is there a real number whose square is −1?
+	a: Is there a real number x such that ____?
+		answer: its square is -1
+	b: Does there exist ____ such that x^2 = -1?
+		answer: a real number
+
+4: Given any real number, there is a real number that is greater. 
+	a. Given any real number r , there is ____ s such that s is ____.
+		answer: a real number; s is greater than r.
+	b. For any ____, ____ such that s > r .
+		answer: real number r; there is a real number s
+		
+7:  Rewrite the following statements less formally, without
+using variables. Determine, as best as you can, whether the
+statements are true or false.
+	a: There are real numbers u and v with the property that u + v < u - v.
+		answer: There is a real number with the property: adding it with another real number is less than subtracting it with another real number.
+	b: There is a real number x such that x^2 < x.
+		answer: There is a real number such that doubling it is greater than its original value.
+	c: For all positive integers n, n^2 ≥ n.
+		answer: There is a positive integer with the property: squared is greater than or equal to the original positive number.
+	d: For all real numbers a and b, |a+b| ≤ |a| + |b|
+		answer: There is the absolute value of a real number with a property: when added together with another absolute value real number is less than or equal to the sum of it and another absolute value real number.
+
+10. Every positive number has a positive square root.
+	a: All positive numbers ____.
+		answer: have a positive square root.
+	b: For any positive number e, there is ____ for e.
+		answer: a positive square root.
+	c: For all positive numbers e, there is a positive number r such that ____.
+		answer: square root of e is equal to r.
+ 
+
+
+
+ 

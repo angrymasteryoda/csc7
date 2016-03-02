@@ -1,0 +1,94 @@
+csc 7 notes 
+~~~~~~~~~~~~~~~~~  2/17/16  ~~~~~~~~~~~~~~~~~
+
+three of the most important statements
+universal statement == says that a certain property is true for all elements in a set ( eg, all positive numbers are greater than zero)
+conditional statement == says that if one thing is true then some other thing also has to be true ( eg, if 378 is divisible by 18, then 378 is divisible by 6)
+existential statements == says that there is at least one thing for which the property is true ( eg, there is a prime number that is even )
+
+
+
+universal conditional statements
+	A universal conditional statement is a statement that is both universal and conditional.
+		eg, for all animals a, if a is a dog, then a is a mammal
+	
+
+universal existential statements
+		is a statement that is universal because its first part says that a certain property is true for all objects of a given type, and it is existential because its second part asserts the existence of something.
+		eg, every real number has an addictive inverse
+	
+existential universal statement 
+	is a statement that is existential because its first part asserts that a certain object exists and is universal because its second part says that the object satisfies a certain property for all things of a certain kind.
+	eg, there is a positive integer that is less than or equal to every positive integer
+	
+
+	
+for example if a1, a2, a3.... is a sequence of real numbers saying that
+	the limit of an as n approaches infinity is L
+	
+means that
+	for all positive real numbers e, there is an integer N such that
+	for all integers n, if n > N then –e < an – L < e.
+
+another example of doing limits
+an = 1 - 2^-n 
+
+so the limit approaches 1 because 2^-n goes to 0 so 1 - 0 will equal 1
+
+
+
+~~~ chapter 2 sets ~~~
+
+set-roster notation == A set may be specified using the by writing all of its elements between the braces. (eg, {1,2,3,4})
+
+axiom of extension == says that a set is completely determined by what its elements are--not the order in which they might be listed or the fact that some elements might be listed more than once.
+
+Set symbols
+R == set of all real numbers
+Z == set of all integer
+Q == set of all rational numbers, or quotients of integers
+N == set of nonnegative integers
+
+
+Venn diagram
+
+R (            Q(               Z(            )               )            )
+
+note the number 0 is neither negative nor positive 
+
+subsets 
+	if a and b are sets, then a is called a subset of b, written a 
+	
+proper subset == let A and B be sets, A is a proper subset of B if, and only if every element of A is in B  but there is at least one element of B that is not A
+
+
+
+~~~~~~~~~~~~~~~~
+the logic of compound statements
+
+common form if p or q the r.
+
+statement == is a sentence that is true or false but not both
+
+
+~ == not
+^ == and
+\/ == or
+
+p^q == the conjunction of p and q
+p\/q == the disjunction of p and q
+
+De Morgan's laws
+~( h ^ s ) == ~h \/ ~s
+~( h \/ s ) == ~h ^ ~s
+
+tautology is a statement form that is always true regard less of the truth values of the individual statements substituted  for its statement variable. a statement whose form is a tautology is a tautological statement.
+
+a contradiction is a statement form that is always false regardless of the truth values of the individual statements substituted for its statement variables. a statement whose form is a contradiction is a contradictory statement
+
+
+
+
+
+
+
