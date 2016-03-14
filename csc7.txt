@@ -88,7 +88,41 @@ a contradiction is a statement form that is always false regardless of the truth
 
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+conditional statements
+
+pemdos order first to last
+~, ^ \/, ->  <->
 
 
+contrapositive of a conditional statement of the form "if p then q" is 
+	if ~Q the ~p
+symbolically
+	the contraoisutuve if p -> q is ~q -> ~p
+	
+	
+suppose the conditional statement is the form of "if p then q"
+
+the converse "if q then p"  === q -> p
+the inverse is "if ~p the ~q" === ~p -> ~q
+
+if p and q are statements,
+ p only f q means " if not q then not p" === "if p then q"
+ 
+ iff == if and only if 
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~
+circuits
+recognizer is a circuit that outputs for exactly 1 one particular combonation of inputs
+
+
+how to get p xor q
+
+p	q p x or q		
+t	t	f				
+t	f	t				
+f	t	t				
+f	f	f				
+
+~( p ^ q ) \/ ( p ^ ~q) \/ ( ~p ^ q) \/ ~( ~p ^ ~q )  === p xor q
