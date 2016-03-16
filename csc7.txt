@@ -119,10 +119,27 @@ recognizer is a circuit that outputs for exactly 1 one particular combonation of
 
 how to get p xor q
 
-p	q p x or q		
+p	q p xor q		
 t	t	f				
 t	f	t				
 f	t	t				
 f	f	f				
 
 ~( p ^ q ) \/ ( p ^ ~q) \/ ( ~p ^ q) \/ ~( ~p ^ ~q )  === p xor q
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+show the work for all the homework
+
+universal statements
+
+predicate is a sentence that contains finite number of vaiables and becomes a statement when specific values are subisition (cont..)
+
+the universal quantifier: upside down a
+
+counterexample is atleast one case where is it not true for all
+
+
+method of exhaustion is the technique used to show the truth of the universal statement
+
+existential quantifier == backwards E
+eg) backwards E a person p such that p is a student in math 140
