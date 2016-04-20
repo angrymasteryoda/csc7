@@ -143,3 +143,99 @@ method of exhaustion is the technique used to show the truth of the universal st
 
 existential quantifier == backwards E
 eg) backwards E a person p such that p is a student in math 140
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+modus ponens === valid
+p -> q
+p
+therfore q
+
+modus tollens === valid
+p->q
+~q
+therefore ~p
+
+inverse error === invalid
+p->q
+~p
+therefore ~q
+
+converse === invlaid
+q -> p
+q
+therfore p
+
+transivity === valid
+p->q
+q->r
+therefore p->r
+
+universal modus ponens
+
+for all x, if P(x) the Q(x).
+P(a) for a particular a
+therefore Q(a)
+
+P(x) = ax^n + bx^n-1 + ... + c
+
+lim P(x)
+x->inf		== inf
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+greeks
+C != a/b  | for all C element of R -> a,b element of z
+c = a/b | for all C element of Q -> a,b element of z
+
+lim( n, infinity, sigma( i = 0, n, a_i  ) <= C );  a_i element of R, C element of R
+
+1111 1111  == 255
+
+sigma( i = 0, 7, 2^n)
+S= simga( i = 0, n, n^i ) we want to sum this guy
+say i do a trick
+rS= r*simga( i = 0, n, n^i )
+r^0 + r^1 + ... + r^n
+	   + r^1 + ... + r ^ ( n + 1 )
+-
+=>r^0 - r^(n+1) = S- rS
+	=s( 1 - r )
+	
+	s=r^0 - r^(n+1) 
+		---------------
+		1 - r
+	
+	= 2^0 - 2^8
+	   -----------
+	   1 - 2
+	   
+.3
+ -
+=.333333333...
+
+3sigma( i = 1, infintity, 10^-i )
+
+
+sigma( i=1, n, r^i ) = r^1 + r^2 + ... + r^n
+anything thing less than 1 raised to the power of infinity is zero
+
+pascals tri
+( N ) = N!
+( i )		--------
+			i!( N - i)!
+			
+(4)
+(0) = 4!/(0!*4!) = 1
+
+
+(4)
+(1) = 4!/(1!*3!) = 4
+
+
+(4)
+(2) = 4!/(2!*2!) = 6
+
+
+
+(N) = (N-1) + (N-1)
+(K)    (k-1)     (  k  )
