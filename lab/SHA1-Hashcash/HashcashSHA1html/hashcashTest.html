@@ -1,0 +1,86 @@
+<!--
+ * Author: Dr. Mark E. Lehr
+ * Created on January 10, 2014, 6:49 PM
+ * Testing something like a hashcash algorithm
+ * Sample output from .cpp program, see if same in html
+ *      The initial random number = 867605078
+ *      The base message = What a difference a day makes!
+ *      The total time take = 5 (secs)
+ *      The number of zeroes = 5
+ *      The hex output = 00000273f4e5e9e2c510995a0b1116cdaf6d4f5f
+ *              0 zeroes occured 915586 times
+ *              1 zeroes occured 57248 times
+ *              2 zeroes occured 3557 times
+ *              3 zeroes occured 212 times
+ *              4 zeroes occured 22 times
+ *              5 zeroes occured 1 times
+ * Sample output from html program, see if same in html
+ * Number of zeros found =4
+ *      The Example String = Example1006081857
+ *      The Resultant Encyrpted 40 Hex/Char nibble = 0000566bb708b2266a41ce7675e81caf370735fd
+ *      Total Time=0.689(secs)
+ *      Number of zeros found (0) ==> 37293 ==> 93.59987952714404%
+ *      Number of zeros found (1) ==> 2389 ==> 5.996034435157995%
+ *      Number of zeros found (2) ==> 148 ==> 0.37145797254222823%
+ *      Number of zeros found (3) ==> 12 ==> 0.030118213989910395%
+ *      Number of zeros found (4) ==> 1 ==> 0.0025098511658258665%
+-->
+
+<!DOCTYPE html>
+<html>
+<header>
+	<script "text/javascript" src="sha_1.js"></script>
+	<script "text/javascript">
+	//Counts zeroes in front of 20 byte hex
+	function count0(str,n){
+		cnt=-1;
+		do{
+		    cnt++;
+		}while(str[cnt]=='0')
+		return cnt;
+	}
+	</script>
+</header>
+<body>
+	<script "text/javascript">
+		//Declare and Setup
+		var datestrt = new Date();
+		var start = datestrt.getTime(); 
+		var size_of_random=Math.floor(Math.pow(2,32));
+		var randNum=Math.floor(Math.random()*size_of_random);
+		var freq=new Array();
+		var endLoop=4;
+	    var example="Example";
+		var zeros;
+		var str;
+		var res;
+		//Zero out the array, won't work if you don't
+		for(var zeroes=0;zeroes<=endLoop;zeroes++){
+			freq[zeroes]=0;
+			//document.write("Number of zeros found ="+zeroes+"="+freq[zeroes]+"<br/>");
+		}
+		//Loop until you get the number of zeroes you want
+		//This is the proof of work that can be checked.
+		var counter=0;
+		do{
+			str=example+(randNum++);
+			res=SHA1(str);
+			zeros=count0(res);
+			freq[zeros]++;
+			counter++;
+		}while(zeros<endLoop);
+		//Output the results and stats
+		document.write("Number of zeros found ="+zeros+"<br/>");
+		document.write("The Example String = "+str+"<br/>");
+		document.write("The Resultant Encyrpted 40 Hex/Char nibble = "+res+"<br/>");
+		var dateend = new Date();
+		var end = dateend.getTime(); 
+		var time=(end-start)/1000;
+		document.write("Total Time="+time+"(secs)<br/>");
+		for(var zeroes=0;zeroes<freq.length;zeroes++){
+			document.write("Number of zeros found ("+zeroes+") ==> "+freq[zeroes]);
+			document.write(" ==> "+freq[zeroes]/counter*100+"%<br/>");
+		}
+	</script>
+</body>
+</html>

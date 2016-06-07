@@ -39,7 +39,7 @@ int main( int argc, char** argv ) {
 	int TIMES = 10000;
 	SizedArr cc;
 	int results[2] = {0,0};
-	cout << "Type \tOriginal num\tFlipped Value\tValid?\n";
+	//cout << "Type \tOriginal num\tFlipped Value\tValid?\n";
 	for( int i = 0; i < TIMES; i ++ ){
 		CreditCard type = randType();
 		cc = genCC( type );
@@ -57,6 +57,30 @@ int main( int argc, char** argv ) {
 		
 	}
 	delete [] cc.cc;
+	cout << "flipped two digits\n";
+	cout << "Valid: " << results[0] << " - " << ( ( (float)results[0] / (float)TIMES ) * 100 ) << "%" << endl;
+	cout << "Invalid: " << results[1] << " - " << ( ( (float)results[1] / (float)TIMES ) * 100 ) << "%" << endl;
+	
+	results[0] = results[1] = 0;
+	for( int i = 0; i < TIMES; i ++ ){
+		CreditCard type = randType();
+		cc = genCC( type );
+//		flipDigit( cc );
+		int idx1 = rand() % (cc.size-2);
+		int idx2 = rand() % (cc.size-2);
+		cc.cc[idx1] ^= cc.cc[idx2];
+		cc.cc[idx2] ^= cc.cc[idx1];
+		cc.cc[idx1] ^= cc.cc[idx2];
+		
+		if( verify( cc ) ) {
+			results[0]++;
+		} else {
+			results[1]++;
+		}
+		
+	}
+	delete [] cc.cc;
+	cout << "transposed\n";
 	cout << "Valid: " << results[0] << " - " << ( ( (float)results[0] / (float)TIMES ) * 100 ) << "%" << endl;
 	cout << "Invalid: " << results[1] << " - " << ( ( (float)results[1] / (float)TIMES ) * 100 ) << "%" << endl;
 	return 0;
@@ -147,7 +171,9 @@ char rndDgit( ) {
 
 void flipDigit( SizedArr sa ){
 	int idx1 = rand() % (sa.size-2);
+	int idx2 = rand() % (sa.size-2);
 	sa.cc[idx1] = rndDgit();
+	sa.cc[idx2] = rndDgit();
 }
 
 bool verify( SizedArr sa ){
